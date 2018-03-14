@@ -1,0 +1,93 @@
+/*
+  Grid layout template - Basic responsive CSS Grid/Flexbox template
+
+  This template uses CSS Grid/Flexbox and the 960 Grid system. It is intended to be used as a basic template that can be adapted to produce templates covering some of the common 960 Grid web layouts such as 3-box, 5-box, 2-column etc.
+
+  Uses: HTML5 and CSS3
+
+  Mark Allen - markallenwebdeveloper.co.uk - 2018
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/* Extends */
+%element {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+html, body {
+  box-sizing: border-box;
+  background-color: #AAAAAA;
+  color: #FFFFFF;
+  height: 100%;
+  padding: 0;
+  margin: 5px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Grid layout */
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(13, auto);
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "n n n n n n n n n n n n"
+    "s s s s s s s s s d d d"
+    "s s s s s s s s s d d d"
+    "s s s s s s s s s d d d"
+    "a a a a a a a a a d d d"
+    "a a a a a a a a a d d d"
+    "a a a a a a a a a d d d"
+    "a a a a a a a a a d d d"
+    "a a a a a a a a a d d d"
+    "a a a a a a a a a d d d"
+    "a a a a a a a a a d d d"
+    "f f f f f f f f f f f f";
+}
+
+/* Define element styling */
+header {
+  grid-area: h;
+  background-color: #446CB3;
+  @extend %element;
+}
+nav {
+  grid-area: n;
+  background-color: #674172;
+  @extend %element;
+}
+section {
+  grid-area: s;
+  background-color: #1E824C;
+  @extend %element;
+}
+article {
+  grid-area: a;
+  background-color: #D35400;
+  @extend %element;
+}
+aside {
+  grid-area: d;
+  background-color: #E2B13C;
+  @extend %element;
+}
+footer {
+  grid-area: f;
+  background-color: #E26A6A;
+  @extend %element;
+}
+
+/* Responsive font sizing */
+h1 {
+  font-size: 2vw;
+}
+h4 {
+  font-size: 1vw;
+}
